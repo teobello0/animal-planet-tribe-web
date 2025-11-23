@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Planet Tribe | Ebooks Naturales</title>
+    <style>
+        /* --- ESTILOS CSS (El Diseño) --- */
+        
+        /* 1. Variables de color para mantener la coherencia */
+        :root {
+            --primary-color: #2F855A; /* Verde Profundo */
+            --secondary-color: #F3F6F4; /* Fondo muy suave */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+        }
+
+        /* 2. Reseteo básico para que se vea igual en todos los navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 3. Barra de Navegación */
+        header {
+            background-color: var(--white);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 4. Sección Hero (La parte principal) */
+        .hero {
+            /* **USANDO UNA URL EXTERNA ESTABLE** para evitar problemas locales */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1543466835-0994f31c8282?w=1000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white; /* Texto principal de la sección Hero */
+            text-align: center;
+            padding: 7rem 20px;
+            min-height: 450px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white); /* ¡CORREGIDO! Asegura que el título es blanco */
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc; /* Un blanco suave para la descripción */
+            margin-bottom: 2rem;
+        }
+        
+        /* Estilos específicos para el botón del Hero */
+        .hero .btn-primary {
+            background-color: white; /* Fondo blanco */
+            color: #333333; /* Texto oscuro */
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #EEEEEE; 
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #4a6e53;
+        }
+
+        /* 5. Sección de Productos (Los Ebooks) */
+        .products {
+            background-color: var(--white);
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.8rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .btn-small {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-small:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 6. Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+        }
+
+        /* Responsive: Ajustes para móvil */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🐾 Animal Planet Tribe</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienestar Natural para tu Mejor Amigo</h1>
+        <p>Descubre guías prácticas, holísticas y respetuosas para cuidar la salud física y emocional de tus mascotas. Sin complicaciones.</p>
+        <a href="#ebooks" class="btn-primary">Ver Guías Disponibles</a>
+    </section>
+
+    <section id="ebooks" class="products">
+        <h2 class="section-title">Nuestros Ebooks Destacados</h2>
+        
+        <div class="grid-container">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500" alt="Perro comiendo sano" style="width:100%; height:200px; object-fit:cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Nutrición Casera para Perros</h3>
+                    <span class="card-price">12.99€</span>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Aprende a cocinar sano y equilibrado.</p>
+                    <a href="#" class="btn-small">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500" alt="Gato relajado" style="width:100%; height:200px; object-fit:cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Gatos Zen: Guía Antiestrés</h3>
+                    <span class="card-price">9.99€</span>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Soluciones para la ansiedad felina.</p>
+                    <a href="#" class="btn-small">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=500" alt="Pata de perro cuidado veterinario" style="width:100%; height:200px; object-fit:cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Primeros Auxilios Naturales</h3>
+                    <span class="card-price">15.00€</span>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Qué hacer antes de ir al veterinario.</p>
+                    <a href="#" class="btn-small">Comprar Ahora</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section id="productos-adicionales" class="products">
+        <h2 class="section-title">Herramientas y Accesorios de la Tribu</h2>
+
+        <div class="grid-container">
+
+            <div class="card">
+                <div class="card-img" style="background-color: #fceabb; color: #C05621;">ACCESORIO</div>
+                <div class="card-content">
+                    <h3 class="card-title">Collar Antiestrés con Aromaterapia</h3>
+                    <span class="card-price">25.00€</span>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Diseño natural para paseos tranquilos.</p>
+                    <a href="https://wa.me/000000000?text=Hola,%20me%20interesa%20el%20Collar%20Antiestres" class="btn-small" target="_blank">Consultar Producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-color: #8D8B6F; color: white;">CURSO ONLINE</div>
+                <div class="card-content">
+                    <h3 class="card-title">Taller Básico de Masajes Caninos</h3>
+                    <span class="card-price">49.99€</span>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Video-curso con certificación de la Tribu.</p>
+                    <a href="https://wa.me/000000000?text=Hola,%20me%20interesa%20el%20Curso%20de%20Masajes" class="btn-small" target="_blank">Inscribirme</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Animal Planet Tribe. Hecho con amor para las mascotas.</p>
+    </footer>
+
+</body>
+</html>
